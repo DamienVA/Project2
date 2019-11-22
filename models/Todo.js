@@ -4,10 +4,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: { len: [1, 160] }
-    },
-    value: {
-      type: DataTypes.INTEGER,
-      allowNull: false
     }
   });
   return Todo;
