@@ -1,3 +1,20 @@
 .list-group-item {
   line-height: 2.5;
 }
+#side {
+  float: left;
+  background-color: red;
+  position: relative;
+  width: 100px;
+}
+#phaze {
+  float: right;
+  position: relative;
+  width: 400px;
+  right: 40em;
+}
+#third {
+  position: relative;
+  top: 30em;
+
+}
