@@ -14,7 +14,6 @@ module.exports = function(app) {
   // Create a new todo
   app.post("/api/todos", async (req, res) => {
     try {
-      console.table(req.body);
       const result = await db.Todo.create(req.body);
       res.json(result);
     } catch (error) {

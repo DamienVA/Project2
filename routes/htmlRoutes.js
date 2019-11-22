@@ -4,10 +4,10 @@ module.exports = function(app) {
   // Load index page
   app.get("/", async (req, res) => {
     try {
-      const dbExamples = await db.Example.findAll({});
+      const dbTodos = await db.Todo.findAll({});
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        todos: dbTodos
       });
     } catch (error) {
       res
@@ -16,14 +16,14 @@ module.exports = function(app) {
     }
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", async (req, res) => {
+  // Load Todo page and pass in an todo by id
+  app.get("/todo/:id", async (req, res) => {
     try {
-      const dbExample = await db.Example.findOne({
+      const dbTodo = await db.Todo.findOne({
         where: { id: req.params.id }
       });
-      res.render("example", {
-        example: dbExample
+      res.render("todo", {
+        todo: dbTodo
       });
     } catch (error) {
       res
