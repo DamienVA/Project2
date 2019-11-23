@@ -1,20 +1,32 @@
+body {
+  background: black;
+}
 .list-group-item {
   line-height: 2.5;
 }
-#side {
-  float: left;
-  background-color: red;
-  position: relative;
-  width: 100px;
-}
-#phaze {
-  float: right;
-  position: relative;
-  width: 400px;
-  right: 40em;
-}
 #third {
   position: relative;
-  top: 30em;
-
+  font-family: 'Inconsolata', monospace;
+  color: #ff4500;
 }
+#head {
+  background-image: url("https://wallpapercave.com/wp/0XSaktb.jpg");
+  position: center;
+  text-align: center;
+  color: #ff4500;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+}
+#example-list{
+    margin-left: 15px;
+    list-style-image:url(‘../ryu.gif’);
+    }
+    
+  
