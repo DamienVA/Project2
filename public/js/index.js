@@ -4,6 +4,8 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+let tempTodos = [];
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(todo) {
@@ -64,19 +66,20 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var todo = {
-    name: $exampleText.val().trim(),
-    value: $exampleDescription.val().trim()
-  };
+  var todo = $exampleText.val().trim();
 
-  if (!(todo.name && todo.value)) {
+  if (!todo) {
     alert("You must enter an example text and description!");
     return;
   }
-
-  API.saveExample(todo).then(function() {
-    refreshExamples();
-  });
+  if (tempTodos.length < 8) {
+    tempTodos.push(todo);
+  } else {
+    API.saveExample(tempTodos).then(function() {
+      tempTodos = [];
+      refreshExamples();
+    });
+  }
 
   $exampleText.val("");
   $exampleDescription.val("");
