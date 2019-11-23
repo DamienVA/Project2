@@ -17,13 +17,12 @@ module.exports = function(app) {
   });
 
   // Load Todo page and pass in an todo by id
-  app.get("/todo/:id", async (req, res) => {
+  app.get("/tournament", async (req, res) => {
     try {
-      const dbTodo = await db.Todo.findOne({
-        where: { id: req.params.id }
-      });
-      res.render("todo", {
-        todo: dbTodo
+      const dbTodos = await db.Todo.findAll({});
+      res.render("tournament", {
+        msg: "Round 1",
+        todos: dbTodos
       });
     } catch (error) {
       res
