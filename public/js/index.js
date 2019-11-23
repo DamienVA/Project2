@@ -37,9 +37,13 @@ var refreshExamples = function() {
       var $a = $("<a>")
         .text(todo.name)
         .attr("href", "/todo/" + todo.id);
-
+      // var $li = $("input:image").css({
+      //   background: "public/assets/Akuma.gif",
+      //   border: "3px red solid"
+      // });
       var $li = $("<li>")
         .attr({
+          // src= "public/assets/Akuma.gif",
           class: "list-group-item",
           "data-id": todo.id
         })
@@ -69,8 +73,8 @@ var handleFormSubmit = function(event) {
     value: $exampleDescription.val().trim()
   };
 
-  if (!(todo.name && todo.value)) {
-    alert("You must enter an example text and description!");
+  if (!todo.name) {
+    alert("You must enter a task!");
     return;
   }
 
