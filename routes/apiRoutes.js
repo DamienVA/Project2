@@ -1,5 +1,9 @@
 var db = require("../models");
 
+// const characters = [
+//   'Ryu.gif',
+// ]
+
 module.exports = function(app) {
   // Get all todos
   app.get("/api/todos", async (req, res) => {
