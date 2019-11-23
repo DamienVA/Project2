@@ -24,7 +24,7 @@ body {
     0 0 100px #0ff,
     0 0 150px #0ff;
 }
-ul{
+#example-list{
     margin-left: 15px;
     list-style-image:url(‘../ryu.gif’);
     }
