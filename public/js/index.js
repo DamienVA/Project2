@@ -72,13 +72,8 @@ var handleFormSubmit = function(event) {
 
   var todo = $exampleText.val().trim();
 
-<<<<<<< HEAD
   if (!todo.name) {
     alert("You must enter a task!");
-=======
-  if (!todo) {
-    alert("You must enter an example text and description!");
->>>>>>> master
     return;
   }
   if (tempTodos.length < 8) {
