@@ -19,7 +19,6 @@ function todo(name, value, eliminated) {
 }
 
 var todos = new Array();
-var newTodo = null;
 
 for (var i = 0; i < 8; i++) {
   todos.push((newTodo = new todo()));
@@ -84,7 +83,7 @@ function round(todo1, todo2) {
 
 function inArray(array, el) {
   for (var i = 0; i < array.length; i++) {
-    if (array[i] == el) {
+    if (array[i] === el) {
       return true;
     }
   }
