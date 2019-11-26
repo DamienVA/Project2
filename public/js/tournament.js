@@ -19,7 +19,7 @@ function todo(name, value, eliminated) {
 }
 
 var todos = new Array();
-var newTodo;
+var newTodo = null;
 
 for (var i = 0; i < 8; i++) {
   todos.push((newTodo = new todo()));
@@ -65,24 +65,24 @@ function nextRoundButton(array) {
   }
 }
 
-var gen_nums = [];
+var genNums = [];
 
 function round(todo1, todo2) {
   var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-  todo1.value += get_rand(nums);
-  todo2.value += get_rand(nums);
+  todo1.value += getRand(nums);
+  todo2.value += getRand(nums);
 
   if (todo1.value > todo2.value) {
     todo2.eliminated = true;
-    gen_nums = [];
+    genNums = [];
   } else {
     todo1.eliminated = true;
-    gen_nums = [];
+    genNums = [];
   }
 }
 
-function in_array(array, el) {
+function inArray(array, el) {
   for (var i = 0; i < array.length; i++) {
     if (array[i] == el) {
       return true;
@@ -91,17 +91,17 @@ function in_array(array, el) {
   return false;
 }
 
-function get_rand(array) {
+function getRand(array) {
   // gets random number in the array by selecting random index
   var rand = array[Math.floor(Math.random() * array.length)];
   //console.log("random number gen: " + rand);
   // if generated number has not been generated before, return number
-  if (!in_array(gen_nums, rand)) {
-    gen_nums.push(rand);
+  if (!inArray(genNums, rand)) {
+    genNums.push(rand);
     return rand;
   }
   // if number have been generated before, run method again
-  return get_rand(array);
+  return getRand(array);
 }
 
 function findRanking(todos) {
