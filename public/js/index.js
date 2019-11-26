@@ -1,6 +1,6 @@
 // Get references to page elements
 var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+// var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
@@ -36,26 +36,22 @@ var API = {
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
     var $examples = data.map(function(todo) {
-      var $a = $("<a>")
-        .text(todo.name)
-        .attr("href", "/todo/" + todo.id);
-      // var $li = $("input:image").css({
-      //   background: "public/assets/Akuma.gif",
-      //   border: "3px red solid"
-      // });
+      var $p = $("<p>").text(todo.name);
+      var $img = $("<img>").attr("src", todo.character);
       var $li = $("<li>")
         .attr({
           // src= "public/assets/Akuma.gif",
           class: "list-group-item",
           "data-id": todo.id
         })
-        .append($a);
+        .append($p);
 
       var $button = $("<button>")
         .addClass("btn btn-danger float-right delete")
         .text("ｘ");
 
       $li.append($button);
+      $li.append($img);
 
       return $li;
     });
@@ -72,21 +68,23 @@ var handleFormSubmit = function(event) {
 
   var todo = $exampleText.val().trim();
 
-  if (!todo.name) {
+  if (!todo) {
     alert("You must enter a task!");
     return;
   }
-  if (tempTodos.length < 8) {
+  if (tempTodos.length <= 7) {
     tempTodos.push(todo);
-  } else {
+  }
+
+  if (tempTodos.length === 8) {
     API.saveExample(tempTodos).then(function() {
-      tempTodos = [];
       refreshExamples();
+      tempTodos = [];
     });
   }
 
   $exampleText.val("");
-  $exampleDescription.val("");
+  // $exampleDescription.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked

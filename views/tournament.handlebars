@@ -1,19 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Todos</h5>
-          <a href="/">← Back To Home</a>
-        </div>
-      </div>
+    <div id="fighters" class="col-1">
+      <ul class="list-group">
+        {{#each todos}}
+        <li data-id="{{this.id}}">
+          <img src="{{this.character}}"/>
+        </li>
+        {{/each}}
+      </ul>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-8 offset-1">
-      <img src="Ryu.gif" alt="Ryu" />
+    <div class="col-4">
+      <img id="bracket" src="bracket.jpg">
     </div>
-    <div class="col-2">
+    <div class="col-5">
       <h1>{{msg}}</h1>
       <ul id="example-list" class="list-group">
         {{#each todos}}
@@ -30,3 +29,15 @@
       <button class="btn btn-secondary">Next Round</button>
     </div>
   </div>
+    <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Todos</h5>
+          <a href="/">← Back To Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
