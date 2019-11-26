@@ -1,11 +1,20 @@
 // Get references to page elements
 var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+// var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
-
 let tempTodos = [];
-
+var snd = new Audio();
+snd.src = [
+  "public/sound/8d82b5_Street_Fighter_Eight_Sound_Effect.mp3",
+  "public/sound/8d82b5_Street_Fighter_Five_Sound_Effect.mp3",
+  "public/sound/8d82b5_Street_Fighter_Four_Sound_Effect.mp3",
+  "public/sound/8d82b5_Street_Fighter_One_Sound_Effect.mp3",
+  "public/sound/8d82b5_Street_Fighter_Seven_Sound_Effect.mp3",
+  "public/sound/8d82b5_Street_Fighter_Six_Sound_Effect.mp3",
+  "public/sound/8d82b5_Street_Fighter_Three_Sound_Effect.mp3",
+  "public/sound/8d82b5_Street_Fighter_Two_Sound_Effect.mp3"
+];
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(todo) {
@@ -72,7 +81,7 @@ var handleFormSubmit = function(event) {
 
   var todo = $exampleText.val().trim();
 
-  if (!todo.name) {
+  if (!todo) {
     alert("You must enter a task!");
     return;
   }
@@ -86,7 +95,7 @@ var handleFormSubmit = function(event) {
   }
 
   $exampleText.val("");
-  $exampleDescription.val("");
+  // $exampleDescription.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -102,5 +111,6 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
+$submitBtn.on("click", snd.play);
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);

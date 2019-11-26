@@ -5,12 +5,41 @@ body {
   line-height: 2.5;
 }
 #third {
+  margin: auto;
   position: relative;
   font-family: 'Inconsolata', monospace;
   color: #ff4500;
 }
+
+
+#head2 {
+  margin: auto;
+  border-radius: 34px;
+  width: 85%;
+  height: 50%;
+  background-image: url("http://getwallpapers.com/wallpaper/full/8/3/a/1023827-widescreen-street-fighter-2-wallpaper-1920x1080-for-android-40.jpg" );
+  background-position: center center;
+  background-size: cover;
+  position: center;
+  text-align: center;
+  color: #ff4500;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+}
 #head {
+  margin: auto;
+  border-radius: 34px;
+  width: 85%;
+  height: 50%;
   background-image: url("https://wallpapercave.com/wp/0XSaktb.jpg");
+  background-size: cover;
   position: center;
   text-align: center;
   color: #ff4500;
@@ -26,7 +55,46 @@ body {
 }
 #example-list{
     margin-left: 15px;
-    list-style-image:url(‘../ryu.gif’);
-    }
+    list-style-image:url(‘../assets’);
+}
+    /* list-style-image:url(['Ryu.gif',]); */
     
-  
+  #gif {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+  }
+  img {
+    border-radius: 20%;
+    padding: 22px;
+    display: inline-block;
+    height: 200px;
+    width: 150px;
+  }
+  #submit {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+  }
+  #submit {
+    background-position: center;
+  transition: background 0.8s;
+  }
+  #submit:hover{
+      background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+      cursor: hand; 
+      cursor: pointer;
+  }
+  #submit:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
+  }
