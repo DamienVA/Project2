@@ -10,7 +10,13 @@ body {
   font-family: 'Inconsolata', monospace;
   color: #ff4500;
 }
-
+/* #head2 {
+  background-image: url("http://getwallpapers.com/wallpaper/full/8/3/a/1023827-widescreen-street-fighter-2-wallpaper-1920x1080-for-android-40.jpg" );
+  background-position: center center;
+  background-size: cover;
+  position: center;
+  margin: auto;
+} */
 
 #head2 {
   margin: auto;
@@ -97,4 +103,15 @@ body {
     background-color: #6eb9f7;
     background-size: 100%;
     transition: background 0s;
+  }
+  #tourney {
+    margin: auto;
+    display: block;
+    position:absolute; bottom:0;
+  }
+  #invisible {
+    display: none;
+  }
+  #final {
+    background-image: url("http://getwallpapers.com/wallpaper/full/8/3/a/1023827-widescreen-street-fighter-2-wallpaper-1920x1080-for-android-40.jpg" );
   }

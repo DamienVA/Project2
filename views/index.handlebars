@@ -26,7 +26,8 @@
       <ul id="example-list" class="list-group">
         {{#each todos}}
         <li data-id="{{this.id}}" class="list-group-item">
-          <a href="todo/{{this.id}}">{{this.name}}</a>
+          <img src="{{this.character}}">
+          <p>{{this.name}}</p>
           <button class="btn btn-danger float-right delete">ｘ</button>
         </li>
         {{/each}}
