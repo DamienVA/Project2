@@ -1,5 +1,5 @@
 <div class="jumbotron" id="head2">
-  <h1 id="invisible">Round 1!</h1>
+  {{!-- <h1 id="invisible">Round 1!</h1> --}}
 </div>
 {{!-- <div class="container">
   <div class="row">
@@ -12,22 +12,29 @@
       </div>
     </div>
   </div> --}}
-  <div class="row">
+  {{!-- <div class="row">
     <div id="gif" class="col-8 offset-1">
       <img src="Ryu.gif" alt="Ryu" />ls
       
-    </div>
+    </div> --}}
+      {{!-- <div class="row"> --}}
+    {{!-- <div id="gif" class="col-8 offset-1"> --}}
+      {{!-- <img src="Ryu.gif" alt="Ryu" /> --}}
     <div class="col-5">
       <h1>{{msg}}</h1>
       <ul id="example-list" class="list-group">
+              <img src="Ryu.gif" alt="Ryu" />
+
         {{#each todos}}
-        <li data-id="{{this.id}}" class="list-group-item">
+        <li data-id="{{this.id}}" class="list-group-item"><div class="fighters">
           <a href="todo/{{this.id}}">{{this.name}}</a>
           <button class="btn btn-danger float-right delete">ｘ</button>
+          </div>
         </li>
         {{/each}}
       </ul>
     </div>
+  </div>
   </div>
   {{!-- <div class="row">
     <div class="col-8 text-center mt-3">

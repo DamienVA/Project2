@@ -2,6 +2,9 @@ body {
   background: black;
 }
 .list-group-item {
+  /* left: 50%; */
+  margin: auto;
+  width: 100%;
   line-height: 2.5;
 }
 #third {
@@ -23,7 +26,7 @@ body {
   border-radius: 34px;
   width: 85%;
   height: 50%;
-  background-image: url("http://getwallpapers.com/wallpaper/full/8/3/a/1023827-widescreen-street-fighter-2-wallpaper-1920x1080-for-android-40.jpg" );
+  background-image: url("http://getwallpapers.getwallpapers/wallpaper/full/8/3/a/1023827-widescreen-street-fighter-2-wallpaper-1920x1080-for-android-40.jpg" );
   background-position: center center;
   background-size: cover;
   position: center;
@@ -66,7 +69,7 @@ body {
     /* list-style-image:url(['Ryu.gif',]); */
     
   #gif {
-    display: inline-block;
+    display: inline-table;
     height: 200px;
     width: 200px;
   }
@@ -104,14 +107,79 @@ body {
     background-size: 100%;
     transition: background 0s;
   }
-  #tourney {
-    margin: auto;
-    display: block;
-    position:absolute; bottom:0;
-  }
+  
   #invisible {
     display: none;
   }
   #final {
     background-image: url("http://getwallpapers.com/wallpaper/full/8/3/a/1023827-widescreen-street-fighter-2-wallpaper-1920x1080-for-android-40.jpg" );
   }
+  #Tourney {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+  }
+  #Tourney {
+    background-position: center;
+  transition: background 0.8s;
+  }
+  #Tourney:hover{
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+    cursor: hand; 
+    cursor: pointer;
+}
+#Tourney:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0s;
+}
+#head2 {
+  /* background-image: url("http://getwallpapers.getwallpapers/wallpaper/full/8/3/a/1023827-widescreen-street-fighter-2-wallpaper-1920x1080-for-android-40.jpg" ); */
+
+  background-image: url("https://i.imgur.com/CWZzhn3.jpg");
+  background-size: cover;
+  position: center;
+  text-align: center;
+}
+.fighters {
+  background-image: "https://i.imgur.com/CWZzhn3.jpg";
+}
+#runTournament {
+  float: right;
+  display: inline-block;
+    padding: 15px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+}
+#runTournament {
+  background-position: center;
+transition: background 0.8s;
+}
+#runTournament:hover{
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+  cursor: hand; 
+  cursor: pointer;
+}
+#runTournament:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0s;
+}
+/* a {
+   color: white;
+} */

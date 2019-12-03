@@ -7,6 +7,10 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
+// window.onload = choosePic;
+// if (typeof window === 'undefined') {
+//   global.window = {}
+// };
 
 let sequelize;
 if (config.use_env_variable) {
@@ -30,6 +34,12 @@ Object.keys(db).forEach(modelName => {
     db[modelName].associate(db);
   }
 });
+// var myPix = new Array("assets/Akuma.gif", "assets/Chun-li.gif", "assets/Dhalsim.gif", "assets/Guile.gif", "assests/Ken.gif", "assets/M.Bison.gif", "assets/Ryu.gif", "assets/Vega.gif");
+
+// function choosePic() {
+//   var randomNum = Math.floor(Math.random() * myPix.length);
+//   document.getElementById("list-group-item").src = myPix[randomNum];
+// }
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
