@@ -1,6 +1,6 @@
 <div class="jumbotron" id="head">
   <h1>Todo Tournament!!!</h1>
-  <h2>Leave of Champions Edition!!</h2>
+  <h2>League of Champions Edition!!</h2>
   <h3>Third Strike!</h3>
 </div>
 
@@ -20,6 +20,7 @@
           {{!-- <textarea class="form-control" id="example-description" aria-describedby="example-description" --}}
             {{!-- placeholder="Enter A Reason Why This Is Important"></textarea> --}}
         </div>
+        <a href="/tournament">Fight</a>
         <button id="submit" class="btn btn-success float-right">Submit</button>
       </form>
       <h3>League of Champions!</h3>
@@ -28,7 +29,6 @@
         <li data-id="{{this.id}}" class="list-group-item">
           <img src="{{this.character}}">
           <p>{{this.name}}</p>
-          <button class="btn btn-danger float-right delete">ｘ</button>
         </li>
         {{/each}}
       </ul>
