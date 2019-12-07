@@ -118,17 +118,4 @@ function getRand(array) {
   return getRand(array);
 }
 
-function compare(a, b) {
-  const valueA = a.value;
-  const valueB = b.value;
-
-  let comparison = 0;
-  if (valueA > valueB) {
-    comparison = -1;
-  } else if (valueA < valueB) {
-    comparison = 1;
-  }
-  return comparison;
-}
-
 $("#nextRound").on("click", main);
