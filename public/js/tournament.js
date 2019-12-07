@@ -118,17 +118,6 @@ function getRand(array) {
   return getRand(array);
 }
 
-function findRanking(todos) {
-  todos.sort(compare);
-
-  for (var i = 0; i < todos.length; i++) {
-    var r = i + 1;
-    console.log(
-      "Rank #" + r + " Name: " + todos[i].name + " Value: " + todos[i].value
-    );
-  }
-}
-
 function compare(a, b) {
   const valueA = a.value;
   const valueB = b.value;
@@ -141,3 +130,5 @@ function compare(a, b) {
   }
   return comparison;
 }
+
+$("#nextRound").on("click", main);
