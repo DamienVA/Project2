@@ -25,7 +25,8 @@ body {
     0 0 150px #0ff;
 }
 #example-list{
-    margin-left: 200px;
+    position: absolute;
+    margin: auto;
     width: auto;
     }
 
@@ -40,6 +41,7 @@ img{
 }
 
 #bracket{
+  width: 100%;
   min-height: 750px;
   min-width: 1000px;
   margin-top: 40px;
