@@ -3,8 +3,8 @@
     <div id="fighters" class="col-1">
       <ul class="list-group">
         {{#each todos}}
-        <li data-id="{{this.id}}">
-          <img src="{{this.character}}"/>
+        <li id="{{this.id}}" data-id="{{this.id}}">
+          <img src="{{this.character}}" />
         </li>
         {{/each}}
       </ul>
@@ -14,10 +14,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-8 text-center mt-3">
-      <button class="btn btn-secondary">Next Round</button>
-    </div>
-        <div class="col-6">
+    <div class="col-6">
       <h1>{{msg}}</h1>
       <ul id="example-list" class="list-group">
         {{#each todos}}
@@ -28,7 +25,12 @@
       </ul>
     </div>
   </div>
-    <div class="row">
+  <div class="row">
+    <div id='container' class="col-8 text-center mt-3">
+      <button id="nextRound" class="btn btn-secondary">Next Round</button>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-8 offset-2">
       <div class="card mt-4">
         <div class="card-body">
@@ -39,4 +41,6 @@
     </div>
   </div>
 </div>
-  
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/tournament.js"></script>

@@ -1,43 +1,48 @@
-// tournament logic, needs to incorporate logic with sequalize and handlebars
+// // tournament logic, needs to incorporate logic with sequalize and handlebars
 
-function todo(name, value, eliminated) {
-  this.name = name;
-  this.value = value;
-  this.eliminated = eliminated;
+let todosArr;
+let margin = 0;
 
-  this.printInfo = function() {
-    console.log(
-      "Name: " +
-        this.name +
-        "\nValue: " +
-        this.value +
-        "\nEliminated: " +
-        this.eliminated +
-        "\n"
-    );
-  };
-}
+const changeCSS = winnersBracket => {
+  for (let i = 0; i < winnersBracket.length; i++) {
+    let curr = winnersBracket[i];
 
-var todos = new Array();
+    $(`#${curr.id}`).css({ "margin-left": `${margin}px` });
+  }
+};
 
-for (var i = 0; i < 8; i++) {
-  todos.push((newTodo = new todo()));
-}
+const main = async () => {
+  const res = await fetch("/api/todos", { method: "GET" });
+  const todos = await res.json();
+  console.log(todos);
+  todosArr = todos.map(todo => {
+    todo.eliminated = false;
+    todo.value = 0;
+    return todo;
+  });
+
+  for (var n = 0; n < 8; n++) {
+    console.log("--------------------------");
+    console.log("Todo Index #: " + n);
+    console.log("Name: " + todosArr[n].name);
+    console.log("Value: " + todosArr[n].value);
+    console.log("Eliminated: " + todosArr[n].eliminated);
+    console.log("--------------------------\n");
+  }
+  const winnerBracket = nextRoundButton(todosArr);
+  // function call for css for wimners
+
+  $("#nextRound").remove();
+  const button = $("<button/>", {
+    text: "Next Round",
+    click: () => nextRoundButton(winnerBracket),
+    class: "btn btn-secondary"
+  });
+
+  $("#container").append(button);
+};
 
 // test data
-for (var n = 0; n < 8; n++) {
-  todos[n].name = "bob";
-  todos[n].value = 0;
-  todos[n].eliminated = false;
-
-  console.log("--------------------------");
-  console.log("Todo Index #: " + n);
-  console.log("Name: " + todos[n].name);
-  console.log("Value: " + todos[n].value);
-  console.log("Eliminated: " + todos[n].eliminated);
-  console.log("--------------------------\n");
-}
-
 var roundCount = 0;
 function nextRoundButton(array) {
   console.log("!!!! Round Number: " + ++roundCount);
@@ -55,12 +60,20 @@ function nextRoundButton(array) {
   }
   if (participants.length !== 1) {
     // finds winner of the round
+    const winnerBracket = new Array();
     for (var j = 0; j < participants.length; j += 2) {
       var n = j + 1;
-      round(participants[j], participants[n]);
+      let winner = round(participants[j], participants[n]);
+      winnerBracket.push(winner);
+
       console.log("p1: " + j + " value: " + participants[j].value);
       console.log("p2: " + n + " value: " + participants[n].value);
     }
+    margin += 210;
+    changeCSS(winnerBracket);
+    console.log(participants);
+    console.log(winnerBracket);
+    return winnerBracket;
   }
 }
 
@@ -75,9 +88,11 @@ function round(todo1, todo2) {
   if (todo1.value > todo2.value) {
     todo2.eliminated = true;
     genNums = [];
+    return todo1;
   } else {
     todo1.eliminated = true;
     genNums = [];
+    return todo2;
   }
 }
 
@@ -103,34 +118,4 @@ function getRand(array) {
   return getRand(array);
 }
 
-function findRanking(todos) {
-  todos.sort(compare);
-
-  for (var i = 0; i < todos.length; i++) {
-    var r = i + 1;
-    console.log(
-      "Rank #" + r + " Name: " + todos[i].name + " Value: " + todos[i].value
-    );
-  }
-}
-
-function compare(a, b) {
-  const valueA = a.value;
-  const valueB = b.value;
-
-  let comparison = 0;
-  if (valueA > valueB) {
-    comparison = -1;
-  } else if (valueA < valueB) {
-    comparison = 1;
-  }
-  return comparison;
-}
-
-// testing
-for (var m = 0; m < 4; m++) {
-  nextRoundButton(todos);
-  console.table(todos);
-}
-
-findRanking(todos);
+$("#nextRound").on("click", main);
