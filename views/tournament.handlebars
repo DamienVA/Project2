@@ -9,24 +9,23 @@
         {{/each}}
       </ul>
     </div>
-    <div class="col-4">
-      <img id="bracket" src="bracket.jpg">
-    </div>
     <div class="col-5">
-      <h1>{{msg}}</h1>
-      <ul id="example-list" class="list-group">
-        {{#each todos}}
-        <li data-id="{{this.id}}" class="list-group-item">
-          <a href="todo/{{this.id}}">{{this.name}}</a>
-          <button class="btn btn-danger float-right delete">ｘ</button>
-        </li>
-        {{/each}}
-      </ul>
+      <img id="bracket" src="bracket.jpg">
     </div>
   </div>
   <div class="row">
     <div class="col-8 text-center mt-3">
       <button class="btn btn-secondary">Next Round</button>
+    </div>
+        <div class="col-6">
+      <h1>{{msg}}</h1>
+      <ul id="example-list" class="list-group">
+        {{#each todos}}
+        <li data-id="{{this.id}}" class="list-group-item">
+          <a href="todo/{{this.id}}">{{this.name}}</a>
+        </li>
+        {{/each}}
+      </ul>
     </div>
   </div>
     <div class="row">
